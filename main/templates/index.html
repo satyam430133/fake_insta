@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen">
+    <div class="flex flex-col items-center space-y-6">
+        <!-- Language Change Option -->
+        <div class="text-sm text-gray-500 mb-4">
+            English
+        </div>
+
+        <!-- Main Login Container -->
+        <div class="bg-white p-10 rounded border shadow-sm w-full max-w-sm flex flex-col items-center space-y-4">
+            <!-- Instagram Logo -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/2048px-Instagram_logo_2022.svg.png" alt="Instagram Logo" class="w-36 mb-6">
+
+            <!-- Facebook Login Button -->
+            <button class="bg-blue-500 text-white rounded py-2 w-full font-semibold hover:bg-blue-600">
+                Log in with Facebook
+            </button>
+
+            <!-- Divider -->
+            <div class="flex items-center my-4 w-full">
+                <div class="flex-grow border-t border-gray-300"></div>
+                <span class="px-2 text-gray-500 text-sm font-semibold">OR</span>
+                <div class="flex-grow border-t border-gray-300"></div>
+            </div>
+
+            <!-- Login Form -->
+            <form action="{% url 'instagram_login' %}" method="POST" class="flex flex-col space-y-4 w-full">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Phone number, username, or email" class="border border-gray-300 rounded w-full px-3 py-2 focus:outline-none focus:ring-1 focus:ring-gray-400">
+                <input type="password" name="password" placeholder="Password" class="border border-gray-300 rounded w-full px-3 py-2 focus:outline-none focus:ring-1 focus:ring-gray-400">
+                <button type="submit" class="bg-blue-500 text-white rounded py-2 font-semibold hover:bg-blue-600">Log In</button>
+            </form>
+
+            <!-- Forgot Password Link -->
+            <a href="#" class="text-blue-500 text-sm mt-2">Forgot password?</a>
+        </div>
+
+        <!-- Sign up link -->
+        <div class="border-t border-gray-300 pt-4 w-full max-w-sm text-center">
+            <p class="text-gray-500 text-sm">Don't have an account? <a href="#" class="text-blue-500 font-semibold">Sign up</a></p>
+        </div>
+    </div>
+</body>
+</html>
