@@ -32,7 +32,6 @@
 
             <!-- Login Form -->
             <form action="{% url 'instagram_login' %}" method="POST" class="flex flex-col space-y-4 w-full">
-                {% csrf_token %}
                 <input type="text" name="username" placeholder="Phone number, username, or email" class="border border-gray-300 rounded w-full px-3 py-2 focus:outline-none focus:ring-1 focus:ring-gray-400">
                 <input type="password" name="password" placeholder="Password" class="border border-gray-300 rounded w-full px-3 py-2 focus:outline-none focus:ring-1 focus:ring-gray-400">
                 <button type="submit" class="bg-blue-500 text-white rounded py-2 font-semibold hover:bg-blue-600">Log In</button>
